@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日任务</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-left">
+        <button id="pinBtn" class="icon-btn" title="置顶窗口">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L12 12M12 12L8 16M12 12L16 16M5 19H19"/></svg>
+        </button>
+        <button id="themeBtn" class="icon-btn" title="切换主题">◐</button>
+        <button id="edgeBtn" class="icon-btn" title="边缘隐藏">⊞</button>
+      </div>
+      <h1 class="title">每日任务</h1>
+      <div id="headerExtra" class="header-right"></div>
+    </header>
+    
+    <div class="date-display">
+      <span id="currentDate"></span>
+    </div>
+    
+    <button id="addTaskBtn" class="add-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      添加任务
+    </button>
+    
+    <div id="taskList" class="task-list"></div>
+    
+    <div id="footer" class="footer">
+      <button id="historyBtn" class="history-btn">查看历史记录</button>
+    </div>
+  </div>
+  
+  <div id="addModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>添加新任务</h2>
+        <button class="close-btn" id="closeModal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group"><label>任务名称</label><input type="text" id="taskTitle" placeholder="输入任务名称" maxlength="50"></div>
+        <div class="form-group"><label>截止时间</label><input type="time" id="taskTime" value="12:00"></div>
+        <button id="saveTaskBtn" class="save-btn">保存任务</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="historyModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>历史记录</h2>
+        <button class="close-btn" id="closeHistory"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+      </div>
+      <div class="modal-body">
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
